@@ -65,13 +65,22 @@ void main(void) {
     T1CONbits.TMR1ON  = 1;
     
     PIR5bits.TMR3IF = 0;
-    PIE5bits.TMR5IE = 1;
+    PIE5bits.TMR3IE = 1;
     
     T3CONbits.TMR3CS = 0b00;
     T3CONbits.T3CKPS = 0b11;
     T3CONbits.T3SYNC = 0;
     TMR3H = 60535;
     T3CONbits.TMR3ON  = 1;
+    
+    PIR5bits.TMR5IF = 0;
+    PIE5bits.TMR5IE = 1;
+    
+    T5CONbits.TMR5CS = 0b00;
+    T5CONbits.T5CKPS = 0b11;
+    T5CONbits.T5SYNC = 0;
+    TMR5H = 60535;
+    T5CONbits.TMR5ON  = 1;
     
     while(1)
     {
