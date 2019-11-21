@@ -64,6 +64,15 @@ void main(void) {
     TMR1 = 60535;
     T1CONbits.TMR1ON  = 1;
     
+    PIR5bits.TMR3IF = 0;
+    PIE5bits.TMR5IE = 1;
+    
+    T3CONbits.TMR3CS = 0b00;
+    T3CONbits.T3CKPS = 0b11;
+    T3CONbits.T3SYNC = 0;
+    TMR3H = 60535;
+    T3CONbits.TMR3ON  = 1;
+    
     while(1)
     {
         
