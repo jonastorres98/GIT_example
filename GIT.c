@@ -47,6 +47,14 @@ void main(void) {
     TRISAbits.TRISA0 = 0;
     PORTAbits.RA0 = 1;
     
+    INTCONbits.T0IF = 0;
+    INTCONbits.T0IE = 1;
+    
+    OPTION_REGbits.PS = 0;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.T0SE = 0b11;
+    TMR0 = 100;
+       
     while(1)
     {
         
