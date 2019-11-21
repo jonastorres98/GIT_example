@@ -54,7 +54,16 @@ void main(void) {
     OPTION_REGbits.T0CS = 0;
     OPTION_REGbits.T0SE = 0b11;
     TMR0 = 100;
-       
+
+    PIR1bits.TMR1IF = 0;
+    PIE1bits.TMR1IE = 1;
+    
+    T1CONbits.TMR1CS = 0b00;
+    T1CONbits.T1CKPS = 0b11;
+    T1CONbits.nT1SYNC = 0;
+    TMR1 = 60535;
+    T1CONbits.TMR1ON  = 1;
+    
     while(1)
     {
         
