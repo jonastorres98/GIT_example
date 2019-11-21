@@ -33,9 +33,22 @@
 #include <xc.h>
 #include <pic16f1614.h>
 
+void __interrupt() INT_RTN(void)
+{
+    
+}
+
 void main(void) {
     OSCCONbits.IRCF = 0b1110;
     OSCTUNEbits.TUN = 0b11;
+    
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
     TRISAbits.TRISA0 = 0;
     PORTAbits.RA0 = 1;
+    
+    while(1)
+    {
+        
+    }
 }
